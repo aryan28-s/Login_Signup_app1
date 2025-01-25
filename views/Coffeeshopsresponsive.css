@@ -1,0 +1,194 @@
+@media (max-width:952px){
+    nav{
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+    }
+    nav img{
+        position: absolute;
+        top:0px;
+        left:0px;
+        width:80px;
+        height:80px;
+    }
+    nav ul li a{
+        font-size:16px;
+    }
+    .typed-out{
+        font-size: 25px;
+        top:25px;
+        color: black;
+        left:80px;
+    }
+    @keyframes typing {
+        0% { width: 0 }
+        95% {border-right: .15em solid rgb(107, 51, 11);}
+        100% { width: 180px ; border-right:transparent;}
+      }
+    body{
+        /* background: rgb(186, 209, 218); */
+        background: rgb(107, 51, 11);
+    }
+    .checkbtn{
+        display:block;
+    }
+    ul{
+      display: none;
+      position: fixed;
+      width: 92%;
+      height:88%;
+      /* background: rgb(186, 209, 218); */
+      background: rgb(49, 23, 4);
+      top:11%;
+      left:4%;
+      padding: 80px;
+      text-align: center;
+      transition: all .5s;
+      z-index: 1;
+      cursor: pointer;
+    }
+    nav ul li{
+      display:block;
+      margin:50px 0;
+      line-height: 30px;
+    }
+    nav ul li a{
+        color: white;
+      font-size:20px;
+    }
+    nav ul li a:hover{
+      color: #707070;
+    }
+    /* a:hover,a.active{
+        background: none;
+        color:whitesmoke;
+    } */
+    #check:checked ~ ul{
+        display: block;
+    }
+    .checkbtn{
+        position: absolute;
+        top:4%;
+        right:4%;
+        background: transparent;
+        width: 50px;
+        height: 50px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+    }
+    #check{
+        display: none;
+        width:50px;
+        height:50px;
+        position:absolute;
+        top:4%;
+        right:4%;
+    }
+    .checkbtn .h1{
+        background:white;
+        position:absolute;
+        top:0%;
+        left:10%;
+        width:60%;
+        height:4%;
+        border-radius: 4px;
+    }
+    .checkbtn .h2{
+        background:white;
+        position:absolute;
+        top:30%;
+        left:10%;
+        width:60%;
+        height:4%;
+        border-radius: 4px;
+    }
+    .checkbtn .h3{
+        background:white;
+        position:absolute;
+        top:60%;
+        left:10%;
+        width:60%;
+        height:4%;
+        border-radius: 4px;
+    }
+    #hr{
+        display: none;
+    }
+    ::-webkit-scrollbar{
+        width:5px;
+        margin-right:200px;
+    }
+    ::-webkit-scrollbar-track{
+        background: rgba(255, 255, 255, 0);
+    }
+    ::-webkit-scrollbar-thumb{
+        background: rgba(33, 15, 2, 0.626);
+        border-radius: 10px;
+        background-clip: content-box;
+        border:1.5px solid transparent;
+        height:20px;
+    }
+    .maintenance{
+        position: absolute;
+        top:65px;
+        left:35px;
+        font-size: 15px;
+      }
+      .develop{
+        font-size: 10px;
+      }
+    .here{
+        font-size: 25px;
+        font-family: "Brush Script MT", cursive;
+    }
+    .typed-out1{
+        display: none;
+    }
+    .scroll{
+        display: none;
+    }
+      .section_1{
+        font-size: 22px;
+      }
+      .section_1_1{
+        left:5%;
+      }
+      .contact{
+        font-size: 15px;
+      }
+      .section_1_1_text{
+        -webkit-text-stroke: 1px white;
+      }
+      .section_2{
+        font-size: 22px;
+      }
+      .section_2_2{
+        left:5%;
+      }
+      .section_2_2_text{
+        -webkit-text-stroke: 1px white;
+      }
+      .contactdunkin{
+        font-size: 15px;
+      }
+      .section_3{
+        font-size: 22px;
+      }
+      .section_3_3{
+        left:5%;
+      }
+      .section_3_3_text{
+        -webkit-text-stroke: 1px white;
+      }
+      .contacttim{
+        font-size: 15px;
+      }
+      .FooterMyName{
+        bottom: 10px;
+    }
+    .chat-container{
+        left:35px;
+    }
+}

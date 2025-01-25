@@ -1,0 +1,219 @@
+@media (max-width:952px){
+    nav{
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+    }
+    nav img{
+        position: absolute;
+        top:0px;
+        left:0px;
+        width:80px;
+        height:80px;
+    }
+    nav ul li a{
+        font-size:16px;
+    }
+    .typed-out{
+        font-size: 22px;
+        top:25px;
+        color: black;
+        left:80px;
+    }
+    @keyframes typing {
+        0% { width: 0 }
+        95% {border-right: .15em solid rgb(107, 51, 11);}
+        100% { width: 80px ; border-right:transparent;}
+      }
+    body{
+        /* background: rgb(186, 209, 218); */
+        background: rgb(107, 51, 11);
+    }
+    .checkbtn{
+        display:block;
+    }
+    ul{
+      display: none;
+      position: fixed;
+      width: 92%;
+      height:88%;
+      /* background: rgb(186, 209, 218); */
+      background: rgb(49, 23, 4);
+      top:11%;
+      left:4%;
+      padding: 80px;
+      text-align: center;
+      transition: all .5s;
+      z-index: 1;
+      cursor: pointer;
+    }
+    nav ul li{
+      display:block;
+      margin:50px 0;
+      line-height: 30px;
+    }
+    nav ul li a{
+        color: white;
+      font-size:20px;
+    }
+    nav ul li a:hover{
+      color: #707070;
+    }
+    /* a:hover,a.active{
+        background: none;
+        color:whitesmoke;
+    } */
+    #check:checked ~ ul{
+        display: block;
+    }
+    .checkbtn{
+        position: absolute;
+        top:4%;
+        right:4%;
+        background: transparent;
+        width: 50px;
+        height: 50px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+    }
+    #check{
+        display: none;
+        width:50px;
+        height:50px;
+        position:absolute;
+        top:4%;
+        right:4%;
+    }
+    .checkbtn .h1{
+        background:white;
+        position:absolute;
+        top:0%;
+        left:10%;
+        width:60%;
+        height:4%;
+        border-radius: 4px;
+    }
+    .checkbtn .h2{
+        background:white;
+        position:absolute;
+        top:30%;
+        left:10%;
+        width:60%;
+        height:4%;
+        border-radius: 4px;
+    }
+    .checkbtn .h3{
+        background:white;
+        position:absolute;
+        top:60%;
+        left:10%;
+        width:60%;
+        height:4%;
+        border-radius: 4px;
+    }
+    #hr{
+        display: none;
+    }
+    ::-webkit-scrollbar{
+        width:5px;
+        margin-right:200px;
+    }
+    ::-webkit-scrollbar-track{
+        background: rgba(255, 255, 255, 0);
+    }
+    ::-webkit-scrollbar-thumb{
+        background: rgba(33, 15, 2, 0.626);
+        border-radius: 10px;
+        background-clip: content-box;
+        border:1.5px solid transparent;
+        height:20px;
+    }
+    .header{
+        height:580px;
+    }
+    .section_1{
+        position: relative;
+        top:40px;
+        font-size: 25px;
+        width:100%;
+        height:300px;
+        background: rgb(107, 51, 11);
+      }
+      .section_1_1{
+        left:13%;
+      }
+      .section_1_1_text{
+        color:white;
+      }
+      .contact{
+        top:20px;
+        color: white;
+        font-size: 15px;
+        border: 1px solid white;
+      }
+      .contact:hover{
+        color: black;
+        background: white;
+      }
+      .typed-out1{
+        display: none;
+      }
+    .content{
+        height: 250px;
+        width: 400px;
+        position: relative;
+        top:10px;
+        left:10%;
+        filter: drop-shadow(5px 5px 10px transparent);
+      }
+    .footer{
+        top:50px;
+    }
+    .FooterMyName{
+        bottom: 10px;
+    }
+    .slider_button_click{
+        top: 140px;
+        right:30px;
+        font-size: 15px;
+        padding: 8px;
+        border-radius: 8px;
+      }
+      .slider_button_click:hover{
+        color: white;
+        background: rgb(107, 51, 11);
+      }
+      .right{
+        background: transparent;
+        top: 220px;
+        left: 100px;
+      }
+      .left{
+        background: transparent;
+        top: 220px;
+        left: 20px;
+      }
+      .btm-slides{
+        left:70%;
+      }
+      .AboutUs{
+        width: 400px;
+        height: auto;
+    }
+    .which{
+        font-size: 20px;
+    }
+    .AboutUs .devloper-list{
+      margin-left:0px;
+    }
+    .AboutUs .devloper-list .devloper{
+      width:400px;
+      height:365px;
+  }
+  .AboutUs .devloper-list .devloper::before{
+      width:390px;
+      height:290px;
+  }
+}

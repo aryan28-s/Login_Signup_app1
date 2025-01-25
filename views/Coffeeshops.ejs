@@ -1,0 +1,259 @@
+<!Doctype html>
+<html>
+<head>
+    <title>
+        Coffee
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Coffeeshops.css">
+    <link rel="stylesheet" href="Coffeeshopsresponsive.css">
+    <link rel="stylesheet" type="text/css" href="your_website_domain/css_root/flaticon.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+<body>
+    <script>
+        // function clickme(){
+        //     var c=document.getElementById("type");
+        //     if(c.style.display === "block"){
+        //         c.style.display = "none";
+        //     }
+        // }
+    </script>
+    <form action="/Coffeeshops" method="post">
+      <div class="header">
+        <nav>
+            <img src="Images/logo.png"width="110px"height="110px"><div class="container"><div class="typed-out">CoffeeHouse's</div></div>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="h1"></i><i class="h2"></i><i class="h3"></i>
+            </label>
+            <ul>
+              <li class="li" id="active"><a href="/index">Home</a></li>
+              <li class="li" id="cfs"><a href="/Coffeeshops">Coffee Shops</a></li>
+              <li class="li" ><a href="/Gallary">Gallary</a></li>
+              <li class="li" ><a href="/ContactMe">Contact</a></li>
+          </ul>
+            <div class="typed-out1" id="type">Hey, Searching for the best coffe shops ___ <div class="scroll">then scroll down</div></div>
+        </nav>
+        <!-- <div class="hoverr" onmousemove="clickme" style="display: block;">hover me</div> -->
+    </div>
+<body>
+  <div class="chat-container">
+    <div class="chat-box" id="chat-box"><div class="choice">This is just about for your choice ___</div></div>
+    <div class="chat-input-container">
+      <input type="text" id="user-input" placeholder="Type your message here (Hello)...">
+      <button id="send-btn">Send</button>
+    </div>
+  </div>
+
+  <script>
+      const chatBox = document.getElementById('chat-box');
+const userInput = document.getElementById('user-input');
+const sendBtn = document.getElementById('send-btn');
+
+// To track the round and current option set
+let roundCounter = 0;
+let selectedPath = '';  // Keeps track of the type of response path chosen
+
+sendBtn.addEventListener('click', sendMessage);
+
+function sendMessage() {
+  const userMessage = userInput.value.trim();
+
+  if (userMessage !== '') {
+    addMessageToChat('user-message', userMessage);
+
+    let botResponse = generateBotResponse(userMessage);
+    setTimeout(() => addMessageToChat('bot-message', botResponse), 500);
+
+    userInput.value = ''; // Clear input field
+  }
+}
+
+function addMessageToChat(className, message) {
+  const messageDiv = document.createElement('div');
+  messageDiv.classList.add('message', className);
+
+  if (typeof message === 'string') {
+    messageDiv.innerText = message;
+  } else {
+    messageDiv.appendChild(message);  // Handle HTML elements like radio buttons
+  }
+
+  chatBox.appendChild(messageDiv);
+  chatBox.scrollTop = chatBox.scrollHeight; // Scroll to bottom
+}
+
+function generateBotResponse(userMessage) {
+  const lowerCaseMessage = userMessage.toLowerCase();
+
+  if (lowerCaseMessage === "hello") {
+    // Start conversation with initial options
+    return createMultipleOptions(roundCounter, selectedPath);
+  }
+
+  const responses = {
+    "default": "I'm sorry, I don't understand. Can you try asking something else?"
+  };
+
+  return responses[lowerCaseMessage] || responses["default"];
+}
+
+// Function to generate new options based on the round and the chosen path
+function createMultipleOptions(round, path) {
+  let options = [];
+
+  switch (round) {
+    case 0:
+      // Initial options (starting point)
+      options = ["You're looking for the coffee", "Sorry"];
+      break;
+    case 1:
+      // Options based on previous selection
+      if (path === 'looking') {
+        options = ["Starbucks", "Dunkin", "Tim Hortons"];
+      } else if (path === 'Sorry') {
+        options = ["Sorry"];
+      }
+      break;
+    case 2:
+      // Different options in third round based on previous selections
+      if (path === 'looking') {
+        options = ["Other than Starbucks ", "Other than Dunkin", "Other than Tim Hortons"];
+      } else if (path === 'Sorry') {
+        options = ["Sorry"];
+      }
+      break;
+    default:
+      options = ["If there is any need to make accurate give the feedback in the feedback section ! Type 'hello' to start again!"];
+      break;
+  }
+
+  if (round < 3) {
+    return createCheckboxOptions(options, handleOptionSelection);
+  } else {
+    return "This is the end of our chat for now! Type 'hello' to start again.";
+  }
+}
+
+function createCheckboxOptions(options, callback) {
+  const checkboxContainer = document.createElement('div');
+  
+  options.forEach((option, index) => {
+    const label = document.createElement('label');
+    const radio = document.createElement('input');
+    radio.type = 'radio';  // Use radio buttons for single choice
+    radio.name = 'chat-option';  // Group radio buttons
+    radio.value = option;
+    radio.id = `option-${index}`;
+
+    label.appendChild(radio);
+    label.appendChild(document.createTextNode(option));
+    checkboxContainer.appendChild(label);
+    checkboxContainer.appendChild(document.createElement('br'));
+  });
+
+  // Add submit button to confirm selection
+  const submitButton = document.createElement('button');
+  submitButton.innerText = 'Submit';
+  submitButton.addEventListener('click', () => {
+    const selectedOption = document.querySelector('input[name="chat-option"]:checked');
+    if (selectedOption) {
+      callback(selectedOption.value);  // Pass the selected option to the callback function
+    }
+  });
+
+  checkboxContainer.appendChild(submitButton);
+  return checkboxContainer;
+}
+
+// Callback function to handle selected option and move to the next round
+function handleOptionSelection(selectedOption) {
+  let botReply = '';
+
+  // Save the type of path for subsequent options
+  if (roundCounter === 0) {
+    if (selectedOption.includes('looking')) {
+      selectedPath = 'looking';
+    } else if (selectedOption.includes('Sorry')) {
+      selectedPath = 'Sorrry';
+    }
+  }
+
+  // Display the user's selection
+  setTimeout(() => addMessageToChat('bot-message', `Let's select for - ${selectedOption}`), 500);
+
+  // Move to the next round of options
+  roundCounter++;
+
+  // Generate a new set of options for the next round
+  if (roundCounter < 3) {
+    setTimeout(() => {
+      const nextOptions = createMultipleOptions(roundCounter, selectedPath);
+      addMessageToChat('bot-message', nextOptions);
+    }, 1000);
+  } else {
+    setTimeout(() => {
+      addMessageToChat('bot-message', "This is the end of our chat! Type 'hello' to start again.");
+    }, 1000);
+  }
+}
+
+
+  </script>
+    <div class="maintenance">The Website is in development progress, <br>
+        <div class="develop">It will fully develop after a period of time</div>
+    </div>
+    <div class="here">Here are the some coffee shops ___</div>
+    <div class="section_1">
+        <div class="section_1_1">
+            <div class="section_1_1_text">Hey, <br>
+                                        Want to buy coffee ___ <br>
+                                        It will redirect to the Starbucks Official site it will not order from this site ___ <br>
+                                        Click Below ___
+            </div><br>
+            <a href="https://www.starbucks.in" class="contact">Buy Now (From Starbucks)</a>
+        </div>
+    </div>
+    <div class="section_2">
+      <div class="section_2_2">
+          <div class="section_2_2_text">Hey, <br>
+                                      Want to buy coffee ___ <br>
+                                      It will redirect to the Dunkin Official site it will not order from this site ___ <br>
+                                      Click Below ___
+          </div><br>
+          <a href="https://www.dunkinathome.com/" class="contactdunkin">Buy Now (From Dunkin)</a>
+      </div>
+    </div>
+    <div class="section_3">
+      <div class="section_3_3">
+          <div class="section_3_3_text">Hey, <br>
+                                      Want to buy coffee ___ <br>
+                                      It will redirect to the Dunkin Official site it will not order from this site ___ <br>
+                                      Click Below ___
+          </div><br>
+          <a href="https://timhortonsindia.com/" class="contacttim">Buy Now (From Tim Hortons)</a>
+      </div>
+    </div>
+    <div class="footer">
+      <img src="Images/logo.png" class="logo2" width="80px" height="80px">
+      <p class="logo1">COFFEE </p>
+          <!-- <i class="logo2">POWERED <img src="logo.png" class="footer-img"></i> -->
+      <div class="ScoialMedia">
+        <!-- <div class="ScoialMedia1">Social Media </div> -->
+        <img src="Images/linkedin.png" alt="linkedin"class="img1"><img src="Images/x-twitter.svg" alt="x-twitter"class="img2"><img src="Images/instagram.png" alt="instagram"class="img3"><img src="Images/whatsapp.png" alt="whatsapp"class="img4">
+      <a href="https://www.linkedin.com/in/aryan-shinde-44b9b5276?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " class="linkdin"></a>
+      <a href="https://twitter.com/aryan03284?t=ZZSsaiG2HW5Y5viuQ1NKDg&s=08 " class="twitter"></a>
+      <a href="https://instagram.com/aryan_328s?igshid=MzRlODBiNWFlZA==" class="instagram"></a>
+      <a href="https://wa.me/qr/FPKFBA4J25JJA1 " class="Whatsapp"></a>
+      </div>
+      <div class="FooterMyName">© 2024 Aryan | All Rigts Reserved</div>
+      <a href="" class="Help">Help !</a>
+      <a href="" class="FeedBack">FeedBack</a>
+  </div>
+    </form>
+</body>
+</html>
+</body>
+</html>

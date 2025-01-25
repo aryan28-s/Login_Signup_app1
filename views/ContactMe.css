@@ -1,0 +1,382 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+nav{
+    background:transparent;
+    height:80px;
+    width: 100%;
+    transition: all 0.4s;
+}
+.lb{
+    position: absolute;
+    top:30px;
+    left:65px;
+    font-size: 50px;
+    font-weight: bolder;
+    color: rgba(107, 51, 11, 0.272);
+    letter-spacing: 4px;
+    font-family:'Courier New', Courier, monospace;
+    /* font-style: italic; */
+}
+ul{
+    position: absolute;
+    top:0px;
+    right:20px;
+}
+.li{
+    display:inline-block;
+    line-height: 80px;
+    margin:0 5px;
+    position: relative;
+    transition: all 0.4s;
+}
+.li::after{
+  content:'';
+  position:absolute;
+  background:rgba(107, 51, 11, 0.208);
+  display:inline-block;
+  width:0px;
+  left: 10px;
+  height: 0.2em;
+  bottom:20px;
+  transition:0.8s linear;
+}
+#active{
+    transition: all 0.4s;
+  }
+  #active::after{
+    width:0px;
+  }
+  #active:hover::after{
+    width:80px;
+  }
+  #cfs{
+    transition: all 0.4s;
+  }
+  #cfs::after{
+    width:0px;
+  }
+  #cfs:hover::after{
+    width:180px;
+  }
+li a{
+    /* color:black; */
+    color: rgba(107, 51, 11, 0.466);
+    font-size:20px;
+    font-weight: bolder;
+    padding: 7px 13px;
+    border-radius:3px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.li #active,.li:hover::after{
+    width: 120px;
+}
+a:hover{
+  /* color:white; */
+  /* color: rgb(239, 239, 192); */
+  color: rgba(107, 51, 11, 0.212);
+}
+#check{
+    display: none;
+}
+.container-fluid
+{
+width: 100%;
+height: auto;
+padding: 0px 0px 10px 0px;
+}
+.AboutUs{
+    width: 1000px;
+    height: auto;
+}
+.AboutUs .devloper-list{
+    display: flex;
+    justify-content: space-between;
+    justify-items: space-between;
+    flex-wrap: wrap;
+    text-align: left;
+    /* margin-right:40px; */
+}
+.AboutUs .devloper-list .devloper{
+    position: absolute;
+    top:180px;
+    right: 0px;
+    width:780px;
+    height:500px;
+    background: transparent;
+    backdrop-filter:blur(4.5px);
+    border-radius: 20px;
+    /* margin-right:40px; */
+}
+.AboutUs .devloper-list .devloper::before{
+    content: '';
+    width:680px;
+    height:450px;
+    background: rgb(107, 51, 11);
+    position: absolute;
+    top:0px;
+    left:10px;
+    opacity: .2;
+    border-radius:20px;
+}
+.AboutUs .devloper-list .devloper::after{
+    content: '';
+    width:5px;
+    height:82%;
+    background:rgba(107, 51, 11, 0.719);
+    position: absolute;
+    left:11px;
+    top:20px;
+}
+.AboutUs .devloper-list .devloper h1{
+    position: absolute;
+    font-family: Segoe Script;
+    top:20px;
+    left:40px;
+    color: rgb(32, 32, 32);
+    font-size: 25px;
+}
+.AboutUs .devloper-list .devloper h2{
+    position: absolute;
+    font-family:'Courier New', Courier, monospace;
+    top:70px;
+    left:40px;
+    color: rgb(32, 32, 32);
+    font-size: 20px;
+}
+.AboutUs .devloper-list .devloper h3{
+    position: absolute;
+    font-family:'Courier New', Courier, monospace;
+    top:110px;
+    left:40px;
+    color: rgb(107, 51, 11);
+    font-size: 20px;
+}
+.AboutUs .devloper-list .devloper h4 .img1{
+    position: absolute;
+    top:150px;
+    padding:4px;
+    background: transparent;
+    left:39px;
+    width:28px;
+    height:28px;
+    border-radius:5px;
+}
+.AboutUs .devloper-list .devloper .img2{
+    position: absolute;
+    top:150px;
+    padding:4px;
+    background: transparent;
+    left:90px;
+    width:28px;
+    height:28px;
+    border-radius:5px;
+}
+.AboutUs .devloper-list .devloper .img3{
+    position: absolute;
+    top:150px;
+    padding:4px;
+    background: transparent;
+    left:140px;
+    width:28px;
+    height:28px;
+    border-radius:5px;
+}
+.AboutUs .devloper-list .devloper .img4{
+    position: absolute;
+    top:150px;
+    padding:4px;
+    background: transparent;
+    left:180px;
+    width:28px;
+    height:28px;
+    border-radius:5px;
+}
+.AboutUs .devloper-list .devloper .linkdin{
+    position: absolute;
+    top:150px;
+    padding:4px;
+    background: transparent;
+    left:39px;
+    width:28px;
+    height:28px;
+    border-radius:5px;
+}
+.AboutUs .devloper-list .devloper .linkdin:hover{
+    background: transparent;
+}
+.AboutUs .devloper-list .devloper .twitter{
+    position: absolute;
+    top:150px;
+    padding:4px;
+    background: transparent;
+    left:90px;
+    width:28px;
+    height:28px;
+    border-radius:5px;
+}
+.AboutUs .devloper-list .devloper .twitter:hover{
+    background: transparent;
+}
+.AboutUs .devloper-list .devloper .instagram{
+    position: absolute;
+    top:150px;
+    padding:4px;
+    background: transparent;
+    left:140px;
+    width:28px;
+    height:28px;
+    border-radius:5px;
+}
+.AboutUs .devloper-list .devloper .instagram:hover{
+    background: transparent;
+}
+.AboutUs .devloper-list .devloper .Whatsapp{
+    position: absolute;
+    top:150px;
+    padding:4px;
+    background: transparent;
+    left:180px;
+    width:28px;
+    height:28px;
+    border-radius:5px;
+}
+.AboutUs .devloper-list .devloper .Whatsapp:hover{
+    background: transparent;
+}
+.AboutUs .devloper-list .devloper .p{
+    position: absolute;
+    top:190px;
+    font-size:20px;
+    color: black;
+    letter-spacing: 2px;
+    padding:4px;
+    background: transparent;
+    left:40px;
+    width:28px;
+    height:28px;
+    border-radius:5px;
+    transition: 0.8s all ease;
+}
+.AboutUs .devloper-list .devloper .p:hover{
+    color:skyblue;
+}
+.AboutUs .devloper-list .devloper .p-desc{
+    position: absolute;
+    top:230px;
+    font-size:20px;
+    color: rgb(107, 51, 11);
+    letter-spacing: 2px;
+    padding:4px;
+    background: transparent;
+    left:40px;
+    /* width:28px; */
+    height:28px;
+    border-radius:5px;
+}
+.AboutUs .devloper-list .devloper .link1{
+    position: absolute;
+    top:270px;
+    font-size:18px;
+    color: black;
+    letter-spacing: 3px;
+    padding:4px;
+    background: transparent;
+    left:40px;
+    /* width:28px; */
+    height:28px;
+    border-radius:5px;
+    transition: 1s all ease;
+}
+.AboutUs .devloper-list .devloper .link1:hover{
+    color:skyblue;
+}
+.AboutUs .devloper-list .devloper .link2{
+    position: absolute;
+    top:300px;
+    font-size:18px;
+    color: black;
+    letter-spacing: 3px;
+    padding:4px;
+    background: transparent;
+    left:40px;
+    /* width:28px; */
+    height:28px;
+    border-radius:5px;
+    transition: 1s all ease;
+}
+.AboutUs .devloper-list .devloper .link2:hover{
+    color:skyblue;
+}
+body{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('Images/contactme.jpeg');
+    background-attachment: fixed;
+}
+#hr{
+    position: absolute;
+    top:70px;
+    right:10px;
+    /* background:white; */
+    background: rgba(107, 51, 11, 0.231);
+    height:4px;
+    width:40%;
+}
+.checkbtn .h1 .h2 .h3{
+    display: none;
+}
+.AboutUs2{
+    position: absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    background-size: cover;
+    background:transparent;
+    backdrop-filter:blur(48.5px);
+    color: black;
+    font-family: Segoe Script;
+    display: none;
+    animation: animate11 3s linear;
+}
+@keyframes animate11 {
+    0%{display:block;background: #707070;}
+    30%{display:block;background: rgb(182, 217, 232);}
+    100%{display:none;background: transparent;}
+}
+.AboutUs2 h1{
+    position: absolute;
+    top:48%;
+    left:45%;
+    font-size:50px;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+}
+.AboutUs2 h2{
+    position: absolute;
+    top:58%;
+    left:30%;
+    font-size:30px;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+}
+::-webkit-scrollbar{
+    width:10px;
+    margin-right:200px;
+}
+::-webkit-scrollbar-track{
+    background: rgba(255, 255, 255, 0);
+}
+::-webkit-scrollbar-thumb{
+    background: skyblue;
+    border-radius: 10px;
+    background-clip: content-box;
+    border:1.5px solid transparent;
+    height:20px;
+}

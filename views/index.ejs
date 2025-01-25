@@ -1,0 +1,115 @@
+<!Doctype html>
+<html>
+<head>
+    <title>
+        Coffee
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="styleshhet" href="css/style.css"
+    <link rel="stylesheet" href="StyleResponsive.css">
+    <link rel="stylesheet" type="text/css" href="your_website_domain/css_root/flaticon.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+<body>
+    <script>
+        // function clickme(){
+        //     var c=document.getElementById("type");
+        //     if(c.style.display === "block"){
+        //         c.style.display = "none";
+        //     }
+        // }
+    </script>
+    <form action="/index" method="post">
+        <div class="header">
+            <!-- <h1>Welcome, <%= username %>!</h1> -->
+            <nav>
+                <img src="Images/logo.png"width="110px"height="110px"><div class="container"><div class="typed-out">Coffee</div></div>
+                <input type="checkbox" id="check">
+                <label for="check" class="checkbtn">
+                    <i class="h1"></i><i class="h2"></i><i class="h3"></i>
+                </label>
+                <ul>
+                    <li class="li" id="active"><a href="/index">Home</a></li>
+                    <li class="li" id="cfs"><a href="/Coffeeshops">Coffee Shops</a></li>
+                    <li class="li" ><a href="/Gallary">Gallary</a></li>
+                    <li class="li" ><a href="/ContactMe">Contact</a></li>
+                </ul>
+            </nav>
+            <!-- <div class="hoverr" onmousemove="clickme" style="display: block;">hover me</div> -->
+            <div class="typed-out1" style="display: block;" id="type">Hey, Would you like coffee</div>
+        </div>
+        <div class="section_1">
+            <div class="section_1_1">
+                <div class="section_1_1_text">Hey, You Like My Website ___ <br>
+                                            Want More information about coffee ___ <br>
+                                            Anything Else ? ___ <br>
+                                            Click Below ___
+                </div><br>
+                <a href="ContactMe.html" class="contact">Contact Me (8055419702)</a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="images">
+               <img src="Images/contactme.jpeg" class="image">
+               <img src="Images/IMG-20241005-WA0034.jpg" class="image">
+               <img src="Images/IMG-20241005-WA0035.jpg" class="image">
+               <img src="pixelcut-export (1).jpeg" class="image">
+            </div>
+            <div class="btm-slides">
+               <span onclick="btm_slide(1)"></span>
+               <span onclick="btm_slide(2)"></span>
+               <span onclick="btm_slide(3)"></span>
+               <span onclick="btm_slide(4)"></span>
+            </div>
+            <div class="slider_button">
+                    <a href="Gallary.html" class="slider_button_click">See all Images</a>
+            </div>
+            <div class="sliders left" onclick="side_slide(-1)">
+               <span class="fas fa-angle-left"></span>
+            </div>
+            <div class="sliders right" onclick="side_slide(1)">
+               <span class="fas fa-angle-right"></span>
+            </div>
+         </div>
+         <script>
+            var indexValue = 1;
+            showImg(indexValue);
+            function btm_slide(e){showImg(indexValue = e);}
+            function side_slide(e){showImg(indexValue += e);}
+            function showImg(e){
+              var i;
+              const img = document.getElementsByClassName('image');
+              const slider = document.querySelectorAll('.btm-slides span');
+              if(e > img.length){indexValue = 1}
+              if(e < 1){indexValue = img.length}
+              for(i = 0; i < img.length; i++){
+                img[i].style.display = "none";
+              }
+              for(i = 0; i < slider.length; i++){
+                slider[i].style.background = "rgba(255,255,255,0.1)";
+              }
+              img[indexValue-1].style.display = "block";
+              slider[indexValue-1].style.background = "white";
+            }
+         </script>
+        <div class="footer">
+            <img src="Images/logo.png" class="logo2" width="80px" height="80px">
+            <p class="logo1">COFFEE </p>
+                <!-- <i class="logo2">POWERED <img src="logo.png" class="footer-img"></i> -->
+            <div class="ScoialMedia">
+              <!-- <div class="ScoialMedia1">Social Media </div> -->
+              <img src="Images/linkedin.png" alt="linkedin"class="img1"><img src="Images/x-twitter.svg" alt="x-twitter"class="img2"><img src="Images/instagram.png" alt="instagram"class="img3"><img src="Images/whatsapp.png" alt="whatsapp"class="img4">
+            <a href="https://www.linkedin.com/in/aryan-shinde-44b9b5276?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " class="linkdin"></a>
+            <a href="https://twitter.com/aryan03284?t=ZZSsaiG2HW5Y5viuQ1NKDg&s=08 " class="twitter"></a>
+            <a href="https://instagram.com/aryan_328s?igshid=MzRlODBiNWFlZA==" class="instagram"></a>
+            <a href="https://wa.me/qr/FPKFBA4J25JJA1 " class="Whatsapp"></a>
+            </div>
+            <div class="FooterMyName">© 2024 Aryan | All Rigts Reserved</div>
+            <a href="" class="Help">Help !</a>
+            <a href="" class="FeedBack">FeedBack</a>
+        </div>
+    </form>
+</body>
+</html>
